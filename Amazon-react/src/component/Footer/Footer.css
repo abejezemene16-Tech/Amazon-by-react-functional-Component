@@ -1,0 +1,82 @@
+/* ---------------- Footer ---------------- */
+ footer {
+    margin-top: 20px;
+}
+
+.foot-panel1 {
+    background-color: #37475a;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.foot-panel1:hover {
+    background-color: #485769;
+}
+
+.foot-panel2 {
+    background-color: #222f3d;
+    color: white;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+
+.foot-panel2 ul p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.foot-panel2 ul a {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.foot-panel2 ul a:hover {
+    text-decoration: underline;
+}
+
+.foot-panel3 {
+    background-color: #222f3d;
+    color: white;
+    border-top: 0.5px solid #4b5460;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-panel3 .logo img {
+    width: 70px;
+}
+
+.foot-panel4 {
+    background-color: #131a22;
+    color: white;
+    height: 80px;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.foot-panel4 a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.foot-panel4 a:hover {
+    text-decoration: underline;
+} 
+

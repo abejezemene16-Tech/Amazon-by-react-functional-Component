@@ -1,0 +1,193 @@
+
+
+In Generally, Unlike class components, function components can be written using much less code, are easier to understand and are easier to test/debug.
+
+Please notice, unlike class components, functional Components do not have a render function. This is because everything defined in the function's body is the render function which ultimately returns a React element
+
+
+
+              - How to change Normal "html" code to react functional Component ???
+
+
+
+******************************************************
+1. Inline Styling (style="..." ወደ style={{ ... }})
+******************************************************
+
+
+በ React ውስጥ Inline style ሲጻፍ እንደ HTML በጽሑፍ (String) ሳይሆን በ JavaScript Object (በድርብ የጥምዝ ቅንፍ {{ }}) ውስጥ ነው የሚጻፈው።
+
+በዚህም ጊዜ 3 ለውጦች ይደረጋሉ፦
+
+በቃላት መካከል ያለው ሰረዝ (-) ይጠፋና ሁለተኛው ቃል በትልቅ ፊደል (camelCase) ይጀምራል (ለምሳሌ፦ background-image ወደ backgroundImage፣ font-size ወደ fontSize፣ margin-top ወደ marginTop)።
+
+የሚሰጡት ዋጋዎች (Values) በትምህርተ ጥቅስ (" ") ውስጥ ይገባሉ (ለምሳሌ፦ "100%", "170px")።
+
+በየመስመሩ መጨረሻ በ ; (Semicolon) ፈንታ , (Comma) እንጠቀማለን።
+
+
+- HTML
+<div style="background-color: black; font-size: 16px; width: 100%;"></div>
+
+
+- በ React (JSX)፦
+JavaScript
+<div style={{ backgroundColor: "black", fontSize: "16px", width: "100%" }}></div>
+
+
+
+
+
+ለ Background Image (ምስል በ Inline Style ሲገባ)፦
+
+JavaScript
+// ከላይ import የተደረገን ምስል (ለምሳሌ singleImg) በ Backticks (` `) ውስጥ እናስገባለን
+<div style={{ backgroundImage: `url("${singleImg}")`, width: "100%", height: "170px" }}></div>
+
+
+******************************************************
+2. class ወደ className መቀየር
+******************************************************
+
+በ JavaScript ውስጥ class የሚለው ቃል ለሌላ ዓላማ የተያዘ (Reserved Keyword) ስለሆነ፣ በ React ውስጥ ሁሉም class የሚሉት ወደ className መቀየር አለባቸው።
+
+
+
+
+በ HTML
+<div class="navbar border"></div>
+
+
+በ React (JSX)፦
+
+JavaScript
+<div className="navbar border"></div>
+
+
+
+******************************************************
+3. መዝጊያ የሌላቸውን ታጎች መዝጋት (Self-Closing Tags)
+******************************************************
+
+
+በ HTML ውስጥ እንደ <img>, <input>, <br>, <hr> ያሉ ታጎች መጨረሻቸው ላይ / ባይኖራቸውም ይሰራሉ። በ React ግን ሁሉም ታጎች የግድ መዘጋት አለባቸው (/>)፤ አለበለዚያ Error ያመጣል።
+
+
+******************************************************
+4. የኮሜንት (Comment) አጻጻፍ
+******************************************************
+
+
+የ HTML ኮሜንት (<!-- -->) በ React ውስጥ አይሰራም፤ እንዲያውም Error ያመጣል። ስለዚህ ወደ {/* */} መቀየር አለበት።
+
+
+
+******************************************************
+5. ምስሎችን (Images) import አድርጎ መጠቀም
+******************************************************
+
+
+በ src/assets ውስጥ ያሉ ምስሎችን እንደ HTML በቀጥታ በጽሑፍ መጥራት አይቻልም። መጀመሪያ ከፋይሉ አናት ላይ import መደረግ አለባቸው።
+
+
+በ HTML፦
+
+HTML
+<img src="resourse/iamge/logo.png" alt="Logo">
+በ React (JSX)፦
+
+
+
+
+JavaScript
+// 1. ከፋይሉ አናት ላይ import ማድረግ
+import logo from '../../assets/resourse/iamge/logo.png';
+
+
+// 2. ከታች በ { } ውስጥ መጠቀም (ትምህርተ ጥቅስ " " አይደረግም)
+<img src={logo} alt="Logo" />
+
+
+******************************************************
+6. ሁሉንም ኮድ በአንድ እናት ታግ (Fragment <> </>) ውስጥ መክበብ
+******************************************************
+
+
+በ React ውስጥ ከ return ( በኋላ ሁለት ወይም ከዚያ በላይ የሆኑ ታጎችን ለብቻቸው ማስቀመጥ አይቻልም። ሁሉም ኮድ በአንድ <div>...</div> ወይም በባዶ ታግ (React Fragment <> ... </>) ውስጥ መከበብ አለበት።
+
+
+
+
+በ React (JSX)፦
+
+JavaScript
+const Header = () => {
+  return (
+    <>
+      <header>...</header>
+      <div className="panel">...</div>
+    </>
+  )
+}
+
+
+
+
+
+******************************************************
+7. የ for እና የ Events አጻጻፍ
+******************************************************
+
+
+ፎርም (Form) ስትሰሪ/ስትሰራ <label for="..."> የሚለው ወደ htmlFor ይቀየራል፤ እንዲሁም እንደ onclick, onchange ያሉት በ camelCase ይጻፋሉ፦
+
+
+class="..." ======	className="..." ======> ለ CSS ስታይል መስጫ
+
+for="..." =====	htmlFor="..." ====>  በ <label> ታግ ውስጥ
+
+style="color: red;" =====	style={{ color: "red" }} =====>   ለ Inline CSS
+
+onclick="..." =====	onClick={...} ===>  ክሊክ ሲደረግ የሚሰራ ተግባር
+
+onchange="..." =====	onChange={...} ===>  የ Input ጽሑፍ ሲቀየር
+
+<!-- comment --> ====	{/* comment */} ====>  ለኮሜንት
+
+<img>, <input> =====	<img />, <input /> ====> ታጎችን መዝጋት
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

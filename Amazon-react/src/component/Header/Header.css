@@ -1,0 +1,176 @@
+
+/* Common Border Hover Effect */
+.border {
+    border: 1px solid transparent;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.border:hover {
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+/* ---------------- Navbar ---------------- */
+.navbar {
+    background-color: #131921;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: white;
+}
+
+/* 1. Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 90px;
+    height: auto;
+    margin-top: 5px;
+}
+
+/* 2. Address */
+.nav-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.add-first {
+    color: #ccc;
+    font-size: 12px;
+    margin-left: 15px;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.add-second {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 3. Search Bar */
+.nav-search {
+    display: flex;
+    flex-grow: 1;
+    height: 40px;
+    border-radius: 4px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.nav-search:hover {
+    outline: 2px solid #f3a847;
+}
+
+.search-select {
+    background-color: #f3f3f3;
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-right: 1px solid #ccc;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.search-input {
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.search-icon {
+    background-color: #febd69;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #131921;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    background-color: #f3a847;
+}
+
+/* 4. Account & Orders */
+.nav-sign, .nav-return {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-sign span, .nav-return {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.nav-second {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+/* 5. Cart */
+.nav-cart {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.nav-cart i {
+    font-size: 26px;
+}
+
+/* ---------------- Sub Panel ---------------- */
+.panel {
+    background-color: #232f3e;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 15px;
+    gap: 15px;
+}
+
+.panel-all {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ul-panel {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.ul-panel li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+}
+
+.ul-panel li a:hover {
+    border: 1px solid white;
+    border-radius: 2px;
+}
